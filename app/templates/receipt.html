@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block title %}Чек · QR Mini-Market{% endblock %}
+{% block data %}data-order="{{ order_uuid }}"{% endblock %}
+{% block content %}
+<div class="receipt-actions"><a class="button secondary" href="/cashier">← Вернуться на кассу</a><button id="print-receipt" class="button primary" type="button" disabled>Распечатать чек</button></div><article id="receipt" class="receipt-paper"><div class="receipt-brand">mini<b>market</b></div><p class="receipt-subtitle">Спасибо за покупку!</p><div id="receipt-content"><p>Загружаем чек…</p></div><p class="receipt-disclaimer">Учебный проект, не фискальный чек<br>Реальные деньги не списываются.</p></article>
+{% endblock %}

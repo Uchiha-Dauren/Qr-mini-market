@@ -1,0 +1,5 @@
+{% extends 'base.html' %}
+{% block title %}Проверка цены · QR Mini-Market{% endblock %}
+{% block content %}
+<section class="price-hero"><span class="eyebrow">ЗНАТЬ ЦЕНУ — ПРОСТО</span><h1>Сколько стоит<br><span class="mint">хорошая покупка?</span></h1><p>Сканируйте штрихкод или найдите товар по названию.<br>Это только проверка цены — покупка не оформляется.</p><form id="price-search-form" class="price-search"><label class="visually-hidden" for="price-search">Штрихкод или название товара</label><input id="price-search" type="search" autocomplete="off" placeholder="Штрихкод или название товара" autofocus><button class="button primary" type="submit">Найти →</button></form></section><div id="price-categories" class="category-chips centered" aria-label="Категории"></div><div class="section-head"><h2 id="price-heading">Товары магазина</h2><span class="muted" id="price-count"></span></div><section id="price-results" class="product-grid price-grid" aria-live="polite"><p class="empty-note">Загружаем товары…</p></section><div id="price-pagination" class="pagination"></div>
+{% endblock %}

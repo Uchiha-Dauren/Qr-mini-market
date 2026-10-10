@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>{% block title %}QR Mini-Market{% endblock %}</title>
+  <link rel="icon" href="/static/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/static/shop.css">
+  <script src="/static/shop.js" defer></script>
+</head>
+<body data-page="{{ page }}" data-timezone="{{ timezone }}" data-development="{{ 'true' if development else 'false' }}" {% block data %}{% endblock %}>
+  <a class="skip-link" href="#main">К содержимому</a>
+  <header class="topbar">
+    <a class="brand" href="{{ '/cashier' if user else '/price-check' }}" aria-label="QR Mini-Market — главная"><span class="brand-mark" aria-hidden="true">m<span>•</span></span><span>mini<span class="brand-light">market</span><small>ПРОСТО. БЫСТРО. ПО QR.</small></span></a>
+    <nav aria-label="Основная навигация">
+      {% if user %}<a href="/cashier" {% if page == 'cashier' %}aria-current="page"{% endif %}>Касса</a>{% endif %}
+      <a href="/price-check" {% if page == 'price-check' %}aria-current="page"{% endif %}>Проверка цены</a>
+      {% if user and user.role.value == 'ADMIN' %}<a href="/admin" {% if page == 'admin' %}aria-current="page"{% endif %}>Управление</a>{% endif %}
+    </nav>
+    <div class="header-end">{% if user %}<span class="user-label">{{ user.username }}</span><button id="logout" class="button ghost small" type="button">Выйти</button>{% else %}<span class="demo-badge">DEMO · KZT</span>{% endif %}</div>
+  </header>
+  <main id="main" class="page-shell">{% block content %}{% endblock %}</main>
+  <div id="notice" class="notice" role="status" aria-live="polite" hidden></div>
+  <footer class="site-footer"><span>QR Mini-Market</span><span>Учебный проект · без реальных платежей</span><span>Сделано для удобных покупок</span></footer>
+</body>
+</html>

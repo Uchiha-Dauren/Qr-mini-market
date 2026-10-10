@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Вход · QR Mini-Market{% endblock %}
+{% block content %}
+<section class="login-layout">
+  <div class="login-story"><span class="eyebrow">КАССА НОВОГО РИТМА</span><h1>Меньше ожидания.<br><span>Больше удобства.</span></h1><p>Товары, чеки и оплата по QR —<br>в одном рабочем пространстве.</p><div class="story-art" aria-hidden="true"><div class="art-orbit"></div><div class="art-receipt"><span>mini<span class="mint">market</span></span><div class="art-lines"></div><div class="art-lines short"></div><div class="art-total">Всё под контролем <b>✓</b></div><div class="art-barcode"></div></div><div class="art-chip">↗ &nbsp; Оплата по QR</div></div><div class="story-footer"><span>01 &nbsp; Сканируйте</span><span>02 &nbsp; Принимайте оплату</span><span>03 &nbsp; Готово</span></div></div>
+  <section class="panel login-card"><span class="eyebrow">РАБОЧЕЕ ПРОСТРАНСТВО</span><h2>С возвращением</h2><p class="muted">Войдите в аккаунт кассира или администратора.</p><form id="login-form"><label for="username">Логин</label><input id="username" name="username" autocomplete="username" required maxlength="100" autofocus placeholder="Ваш логин"><label for="password">Пароль</label><input id="password" name="password" type="password" autocomplete="current-password" required placeholder="Введите пароль"><div id="login-error" class="form-error" role="alert" hidden></div><button class="button primary wide" type="submit">Войти в магазин <span aria-hidden="true">→</span></button></form><p class="login-note">Доступ выдаёт администратор магазина.<br>Платежи в этом проекте учебные.</p></section>
+</section>
+{% endblock %}

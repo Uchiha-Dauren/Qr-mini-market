@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block title %}Ваши покупки · QR Mini-Market{% endblock %}
+{% block data %}data-terminal="{{ terminal_code }}"{% endblock %}
+{% block content %}
+<div class="page-heading"><div><span class="eyebrow">ПРИЯТНО ВАС ВИДЕТЬ</span><h1>Ваши покупки</h1></div><span class="live-indicator" id="connection-status">Обновление каждые 1,5 секунды</span></div>
+<section id="display-idle" class="panel welcome-display"><span class="welcome-icon" aria-hidden="true">m<span>•</span></span><span class="eyebrow">ДОБРО ПОЖАЛОВАТЬ</span><h2>Маленький магазин.<br><span class="mint">Приятные покупки.</span></h2><p>Кассир добавит товары — они появятся здесь.<br>Когда всё будет готово, оплатите покупку по QR.</p><div class="welcome-steps"><span>01 &nbsp; Выберите товары</span><span>02 &nbsp; Отсканируйте QR</span><span>03 &nbsp; Заберите покупки</span></div></section>
+<div id="display-order" class="display-layout" hidden><section class="panel display-cart"><div class="section-head"><h2 id="display-order-number">Ваш чек</h2><span id="display-item-count" class="muted"></span></div><div id="display-items"></div><div class="total-row display-total"><span>Итого</span><strong id="display-total">0,00 ₸</strong></div></section><section id="display-payment" class="panel display-pay" aria-live="polite"></section></div>
+{% endblock %}

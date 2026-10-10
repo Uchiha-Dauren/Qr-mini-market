@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Оплата · Учебный банк</title>
+  <link rel="stylesheet" href="/static/bank.css">
+  <script src="/static/money.js" defer></script>
+  <script src="/static/bank.js" defer></script>
+</head>
+<body data-token="{{ token }}">
+  <main class="payment-card">
+    <div class="brand"><span class="brand-mark">B</span><span>Учебный банк<small>QR Mini-Market</small></span></div>
+    <div class="notice">Учебный эмулятор банка. Не вводите реальные данные.</div>
+    <p class="eyebrow">Оплата покупки</p>
+    <h1>{{ invoice.merchant_name }}</h1>
+    <p id="description">{{ invoice.description }}</p>
+    <p class="amount" id="amount">Загрузка суммы…</p>
+    <p id="timer" class="muted">Проверяем срок действия…</p>
+    <div id="status" role="status" aria-live="polite">Загружаем счёт…</div>
+    <form id="pay-form">
+      <label for="account">Демо-счёт</label>
+      <select id="account" required aria-describedby="account-hint" disabled><option value="">Загрузка…</option></select>
+      <p class="muted" id="account-hint">Деньги учебные. Банковские реквизиты не нужны.</p>
+      <button id="pay" type="submit" disabled>Оплатить</button>
+    </form>
+    <button id="cancel" class="secondary" type="button" disabled>Отмена</button>
+    <details><summary>Демонстрация отказа</summary><p class="muted">Завершить счёт с причиной «Банк отклонил».</p><button id="decline" class="danger" type="button" disabled>Смоделировать отказ банка</button></details>
+    <p class="footer">Сумма получена из базы банка. После оплаты вернитесь к экрану кассы.</p>
+    <noscript><p>Для оплаты включите JavaScript в браузере.</p></noscript>
+  </main>
+</body>
+</html>
